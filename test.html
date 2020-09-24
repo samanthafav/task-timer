@@ -1,35 +1,42 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
 
-    </head>
-    <body>
-        <!--put this in the body of index.html-->
-        <form>
-            <input type="text" id="ftask" name="ftask" placeholder="enter the task here" aria-placeholder="enter the task here"><br>
-            <!--</1><input type="number" id="fduration" name="fduration" placeholder="# of minutes" aria-placeholder="enter the number of minutes you will work on this task">-->
-            <p id="fduration">0</p><br>
-            <input type="button" id="clear" name="clear" value="clear" onclick="clearInputs()"><input type="button" id="1m" name="1m" value="+1" onclick="add1m()"><input type="button" id="5m" name="5m" value="+5" onclick="add5m()"><input type="button" id="15m" name="15m" value="+15" onclick="add15m()">
-            <input type="button" id="fbtn" value="Save data to file" onclick="saveTask()"><br>
-            <input type="button" id="cStorage" name="cStorage" value="Check Storage" onclick="checkStorage()"><input type="button" id="aStorage" name="aStorage" value="Add to Storage" onclick="addStorage()"><input type="button" id="nStorage" name="nStorage" value="Count Storage" onclick="countStorage()"><input type="button" id="clStorage" name="clStorage" value="Clear Storage" onclick="clearStorage()">
-        </form>
+<head>
+
+</head>
+
+<body>
+    <!--put this in the body of index.html-->
+    <form>
+        <input type="text" id="ftask" name="ftask" placeholder="enter the task here"
+            aria-placeholder="enter the task here"><br>
+        <!--</1><input type="number" id="fduration" name="fduration" placeholder="# of minutes" aria-placeholder="enter the number of minutes you will work on this task">-->
+        <p id="fduration">0</p><br>
+        <input type="button" id="clear" name="clear" value="clear" onclick="clearInputs()"><input type="button" id="1m"
+            name="1m" value="+1" onclick="add1m()"><input type="button" id="5m" name="5m" value="+5"
+            onclick="add5m()"><input type="button" id="15m" name="15m" value="+15" onclick="add15m()">
+        <input type="button" id="fbtn" value="Save data to file" onclick="saveTask()"><br>
+        <input type="button" id="cStorage" name="cStorage" value="Check Storage" onclick="checkStorage()"><input
+            type="button" id="aStorage" name="aStorage" value="Add to Storage" onclick="addStorage()"><input
+            type="button" id="nStorage" name="nStorage" value="Count Storage" onclick="countStorage()"><input
+            type="button" id="clStorage" name="clStorage" value="Clear Storage" onclick="clearStorage()">
+    </form>
 
     <!--script to add time to button-->
     <script>
-    function add1m () {
-        //get start value as a number
-        var startDuration = parseInt(document.getElementById("fduration").innerHTML);
-        //get value to be added to duration
-        var toAdd = 1;
-        //add value to duration
-        var newDuration = startDuration + toAdd
-        //get new duration and replace start duration with new value
-        document.getElementById("fduration").innerHTML = newDuration;
+        function add1m() {
+            //get start value as a number
+            var startDuration = parseInt(document.getElementById("fduration").innerHTML);
+            //get value to be added to duration
+            var toAdd = 1;
+            //add value to duration
+            var newDuration = startDuration + toAdd
+            //get new duration and replace start duration with new value
+            document.getElementById("fduration").innerHTML = newDuration;
         }
     </script>
     <script>
-        function add5m () {
+        function add5m() {
             //get start value as a number
             var startDuration = parseInt(document.getElementById("fduration").innerHTML);
             //get value to be added to duration
@@ -38,92 +45,89 @@
             var newDuration = startDuration + toAdd
             //get new duration and replace start duration with new value
             document.getElementById("fduration").innerHTML = newDuration;
-            }
-        </script>
-   <script>
-    function add15m () {
-        //get start value as a number
-        var startDuration = parseInt(document.getElementById("fduration").innerHTML);
-        //get value to be added to duration
-        var toAdd = 15;
-        //add value to duration
-        var newDuration = startDuration + toAdd
-        //get new duration and replace start duration with new value
-        document.getElementById("fduration").innerHTML = newDuration;
-  
         }
     </script>
     <script>
-        function clearInputs () {
+        function add15m() {
+            //get start value as a number
+            var startDuration = parseInt(document.getElementById("fduration").innerHTML);
+            //get value to be added to duration
+            var toAdd = 15;
+            //add value to duration
+            var newDuration = startDuration + toAdd
+            //get new duration and replace start duration with new value
+            document.getElementById("fduration").innerHTML = newDuration;
+
+        }
+    </script>
+    <script>
+        function clearInputs() {
             //replace duration with 0
             document.getElementById("fduration").innerHTML = 0;
             document.getElementById("ftask").value = "";
-            }
-        </script>
-    
+        }
+    </script>
+
     <script>
-        function saveTask () {
+        function saveTask() {
             //get all data from each element in the form
             var dtask = document.getElementById("ftask").value;
             var dduration = parseInt(document.getElementById("fduration").innerHTML);
             //store all data in a new variable
             var data = dtask + " (" + dduration + "m)";
             //validate that they filled everything in
-            if (dtask.length < 1 || dduration < 1) {alert("uh oh! you haven't entered all of the required fields ");} else {
+            if (dtask.length < 1 || dduration < 1) { alert("uh oh! you haven't entered all of the required fields "); } else {
                 (document.getElementById("fduration").innerHTML = data);
                 var nowCount = localStorage.length;
                 var nextCount = nowCount + 1;
                 var nextKey = "task" + nowCount;
-                localStorage.setItem(nextKey,data);
-                }
+                localStorage.setItem(nextKey, data);
             }
-        </script>
+        }
+    </script>
 
-        <script>
-            function addStorage(){
-                localStorage.setItem("One",(document.getElementById("ftask").value));
-                checkStorage();
+    <script>
+        function addStorage() {
+            localStorage.setItem("One", (document.getElementById("ftask").value));
+            checkStorage();
+        }
+    </script>
+
+    <script>
+        function checkStorage() {
+            alert(localStorage.getItem("task2"));
+        }
+    </script>
+    <script>
+        function countStorage() {
+            alert(localStorage.length);
+        }
+    </script>
+    <script>
+        function clearStorage() {
+            localStorage.clear();
+        }
+    </script>
+    <script>
+        function newDayCheck() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = mm + '/' + dd + '/' + yyyy;
+            if (localStorage.getItem("listDate") == null) {
+                localStorage.setItem("listDate", today);
             }
-        </script>
-        
-        <script>
-            function checkStorage(){
-                alert(localStorage.getItem("task2"));
+            else {
+                var logDate = localStorage.getItem("listDate");
+                if (logDate === today) { alert("this list is from today!"); } else { alert("This list is from yesterday, I just cleared it" + today); };
             }
-        </script>
-        <script>
-            function countStorage(){
-                alert(localStorage.length);
-            }
-        </script>
-        <script>
-            function clearStorage(){
-                localStorage.clear();
-            }
-        </script>
-        <script>
-            function newDayCheck(){
-                var logDate = localStorage.getItem("listDate").getDate();
-                var dd = String(logDate.getDate()).padStart(2, '0');
-                var mm = String(logDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-                var yyyy = logDate.getFullYear();
-                logDate = mm + '/' + dd + '/' + yyyy;
-                alert(logDate);
-                var today = new Date();
-                var dd = String(today.getDate()).padStart(2, '0');
-                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-                var yyyy = today.getFullYear();
-                today = mm + '/' + dd + '/' + yyyy;
-                if (logDate = today) {alert("this list is from today!");} else {alert("This list is from yesterday, I just cleared it");};
-            }
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded",newDayCheck());
-        </script>
-    
-    </body>
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", newDayCheck());
+    </script>
+
+</body>
+
 </html>
-
-<!--var storage = localStorage.value;
-                var storage = localStorage.getItem("One");
-                alert(localStorage.getItem("One"));-->
