@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
     /* Dark theme styles go here */
-    body {
+    :root {
         color: #eee;
         background: #121212;
         font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
