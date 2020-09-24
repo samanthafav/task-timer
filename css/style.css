@@ -3,6 +3,7 @@
     :root {
         color: #eee;
         background: #121212;
+        text-align: center;
         font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
     }
     a {
@@ -11,7 +12,6 @@
     }
     p {
         font-family: font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
-        text-align: center;
         font-size: 60px;
         color: #eee;
     }
@@ -22,13 +22,13 @@
     :root {
         color: #222;
         background: #fff;
+        text-align: center;
         font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
     }
     a {
         color: #6F5ED9;
     }
     p {
-        text-align: center;
         font-size: 60px;
     }
 }
