@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", newDayCheck()); {
         }
         else {
             var logDate = localStorage.getItem("listDate");
-            if (logDate === today) { alert("this list is from today!"); } else { alert("This list is from yesterday, I just cleared it" + today); };
+            if (logDate === today) { alert("this list is from today!"); }
+            else {
+                alert("This list is from yesterday, I just cleared it");
+            };
         }
-    }
-
+    };
 }
-
