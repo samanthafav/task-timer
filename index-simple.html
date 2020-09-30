@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--main stylesheet-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--fonts-->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open-Sans">-->
+    <!--remove safari interface-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--custom app icons for apple-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icons/icon_60pt@3x.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-touch-icons/icon_60pt@2x.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/apple-touch-icons/icon_83.5@2x.png">
+    <link rel="apple-touch-icon" sizes="80x80" href="/assets/apple-touch-icons/icon_40pt@2x.png">
+    <link rel="apple-touch-icon" sizes="58x58" href="/assets/apple-touch-icons/icon_29pt@2x.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-touch-icons/icon_20pt@3x.png">
+    <link rel="apple-touch-icon" sizes="40x40" href="/assets/apple-touch-icons/icon_20pt@2x.png">
+    <!--javascript to prompt user to type in a task-->
+    <!--<script src="./js/script-task.js"></script>-->
+    <!--javascript for countdown timer-->
+    <!--<script src="./js/script-timer.js"></script>-->
+    <!--startup scripts-->
+    <script src="./js/script-startup-simple.js"></script>
+    <!--add times to new task via button-->
+    <script src="./js/script-duration.js"></script>
+    <!--add times to new task via button-->
+    <script src="./js/script-other-buttons.js"></script>
+    <!--saves task to local storage-->
+    <script src="./js/script-save-task-simple.js"></script>
+    <!--loads all list items from local storage-->
+    <!--<script src="./js/script-get-task-list.js"></script>-->
+
+</head>
+
+<body>
+    <!--task paragraph-->
+    <p id="task"></p>
+    <!--timer paragraph-->
+    <p id="timer" style="visibility: hidden;"></p>
+    <button id="refresh" style="visibility: hidden;" onClick="window.location.reload();">Done! </button>
+    <!--add new tasks-->
+    <form id="form">
+        <input type="text" id="ftask" name="ftask" placeholder="enter the task here"
+            aria-placeholder="enter the task here"><br>
+        <p id="fduration">0</p><br>
+        <input type="button" id="clear" name="clear" value="clear" onclick="clearInputs()"><input type="button" id="1m"
+            name="1m" value="+1" onclick="add1m()"><input type="button" id="5m" name="5m" value="+5"
+            onclick="add5m()"><input type="button" id="15m" name="15m" value="+15" onclick="add15m()">
+        <input type="button" id="fbtn" value="Start Task" onclick="saveTaskSimple()"><br>
+    </form><br>
+
+</body>
+
+</html>

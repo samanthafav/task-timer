@@ -1,5 +1,4 @@
-
-var duration = .1;
+var duration = parseInt(fduration);
 var now = new Date();
 var deadline = new Date(now.getTime() + duration * 60000);
 var x = setInterval(function () {
@@ -15,4 +14,4 @@ var x = setInterval(function () {
         clearInterval(x);
         document.getElementById("timer").innerHTML = "EXPIRED";
     }
-}, 1000); 
+}, 1000);
