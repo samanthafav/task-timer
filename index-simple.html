@@ -34,22 +34,28 @@
 </head>
 
 <body>
-    <!--task paragraph-->
-    <p id="task"></p>
-    <!--timer paragraph-->
-    <p id="timer" style="visibility: hidden;"></p>
-    <button id="refresh" style="visibility: hidden;" onClick="window.location.reload();">Done! </button>
-    <!--add new tasks-->
-    <form id="form">
-        <input type="text" id="ftask" name="ftask" placeholder="enter the task here"
-            aria-placeholder="enter the task here"><br>
-        <p id="fduration">0</p><br>
-        <input type="button" id="clear" name="clear" value="clear" onclick="clearInputs()"><input type="button" id="1m"
-            name="1m" value="+1" onclick="add1m()"><input type="button" id="5m" name="5m" value="+5"
-            onclick="add5m()"><input type="button" id="15m" name="15m" value="+15" onclick="add15m()">
-        <input type="button" id="fbtn" value="Start Task" onclick="saveTaskSimple()"><br>
-    </form><br>
-
+    <div class="centered">
+        <!--task paragraph-->
+        <p id="task"></p>
+        <!--timer paragraph-->
+        <p id="timer" style="visibility: hidden;"></p>
+        <p></p>
+        <button id="refresh" style="visibility: hidden;" onClick="window.location.reload();">Done!</button>
+        <br>
+        <!--add new tasks-->
+        <form id="form">
+            <input type="text" id="ftask" name="ftask" placeholder="enter the task here"
+                aria-placeholder="enter the task here"><br>
+            <p id="fduration">0</p><br>
+            <input type="button" id="1m" name="1m" value="+1" onclick="add1m()"><input type="button" id="5m" name="5m"
+                value="+5" onclick="add5m()"><input type="button" id="15m" name="15m" value="+15" onclick="add15m()">
+            <br>
+            <br>
+            <input style="margin: 5px;" type="button" id="clear" name="clear" value="clear"
+                onclick="clearInputs()"><input type="button" style="margin: 5px;" id="fbtn" value="Start Task"
+                onclick="saveTaskSimple()"><br>
+        </form><br>
+    </div>
 </body>
 
 </html>

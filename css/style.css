@@ -1,21 +1,73 @@
+
+
+
 @media (prefers-color-scheme: dark) {
     /* Dark theme styles go here */
     :root {
-        color: #eee;
-        background: #121212;
+        color: #eeeeee;
+        background: #151318;
         text-align: center;
-        font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
+        font-family: "San Francisco", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
+    }
+    div {
+        background-color: #211E2B;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        
+
+        
+
+    }
+    .centered {
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+            margin-bottom: 10px;
+          }
+    }
+    body {
+        margin: 30px;
+        height: 100vh;
     }
     a {
         color: #6F5ED9;
-        font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
+        font-family: "San Francisco", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
     }
     p {
-        font-family: font-family: "Open Sans", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
-        font-size: 60px;
-        color: #eee;
+        font-family: font-family: "San Francisco", -apple-system, "Helvetica Neue", "sans-serif", "Arial";
+        font-size: 16px;
+        color: #6F5ED9;
+
     }
-}
+    p.action{
+        font-size: 60px;
+    }
+    input[type=text] {
+        border-radius: 4px;
+        background-color: #705FD9;
+        width:50%;
+        padding:10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        border: none;
+        margin:10px 0;
+        color:#eeeeee;
+        text-align: center;
+    }
+    input[type=text]:hover {
+        background-color: #6252C5;
+    }
+    :focus{
+        outline: none !important;
+    }
   
 @media (prefers-color-scheme: light) {
     /* Light theme styles go here */
@@ -32,3 +84,7 @@
         font-size: 60px;
     }
 }
+
+    input[type=text] {
+        border-radius: 4px;
+      }
